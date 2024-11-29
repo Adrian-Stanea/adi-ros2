@@ -1,9 +1,0 @@
-[submodule "imu-ros2"]
-	path = imu-ros2
-	url = https://github.com/Adrian-Stanea/imu-ros2.git
-[submodule "tof-ros2"]
-	path = tof-ros2
-	url = https://github.com/Adrian-Stanea/tof-ros2.git
-[submodule "tmcl_ros2"]
-	path = tmcl_ros2
-	url = https://github.com/Adrian-Stanea/tmcl_ros2.git
