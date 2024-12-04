@@ -69,7 +69,7 @@ install_ToF_SDK() {
     pushd .
     git clone --depth 1 --recurse-submodules --branch v"${ToF_VERSION}" https://github.com/analogdevicesinc/ToF
     cd ToF
-    mkdir build && cd build
+    mkdir build_"${PROTOBUF_VERSION}" && cd build_"${PROTOBUF_VERSION}"
     cmake .. \
         -DCMAKE_C_COMPILER=gcc-9 \
         -DCMAKE_CXX_COMPILER=g++-9 \
@@ -95,7 +95,7 @@ install_libiio() {
     pushd .
     git clone --depth 1 --branch  v"${LIBIIO_VERSION}" https://github.com/analogdevicesinc/libiio.git
     cd libiio
-    mkdir build && cd build
+    mkdir build_"${LIBIIO_VERSION}" && cd build_"${LIBIIO_VERSION}"
     cmake .. \
         -DCMAKE_C_COMPILER=gcc-9 \
         -DCMAKE_CXX_COMPILER=g++-9 \

@@ -48,7 +48,7 @@ build_from_source() {
     # Install dependencies using rosdep
     apt-get update -y
     rosdep update
-    rosdep install --from-paths src --ignore-src -r -y
+    rosdep install --from-paths src --rosdistro $ROS_DISTRO -y
 
 
     # NOTE: export from below is required to build imu-ros2 (it creates a per device package)
@@ -66,6 +66,13 @@ build_from_source() {
     #     --ros-distro $ROS_DISTRO
 
     # fakeroot debian/rules binary
+
+    EXIT_CODE=$?
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo "Build succeeded."
+    else
+        echo "Build failed with exit code $EXIT_CODE."
+    fi
 }
 
 
