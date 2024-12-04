@@ -52,25 +52,22 @@ build_from_source() {
 
 
     # NOTE: export from below is required to build imu-ros2 (it creates a per device package)
-    # export DEVICE_ID=adis16505-2
+    export DEVICE_ID=adis16505-2
 
     colcon build \
         --cmake-args \
         -DCMAKE_C_COMPILER=gcc-9 \
         -DCMAKE_CXX_COMPILER=g++-9
 
+    # WIP: some pacakges do not support this currently
     # Create .deb packages locally
-    rosdep install --from-paths src -y --ignore-src
+    # cd src/tof-ros2
+    # bloom-generate rosdebian \
+    #     --ros-distro $ROS_DISTRO
 
-    cd src/tof-ros2
-    bloom-generate rosdebian \
-        --ros-distro $ROS_DISTRO
-
-    fakeroot debian/rules binary
+    # fakeroot debian/rules binary
 }
 
 
 setup_workspace
-
-
-popd
+build_from_source

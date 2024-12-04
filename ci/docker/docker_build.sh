@@ -2,7 +2,7 @@
 
 set -ex
 
-ROS_DISTROS=(noetic)
+ROS_DISTROS=(humble)
 
 
 CI_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)

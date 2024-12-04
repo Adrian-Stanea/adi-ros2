@@ -22,9 +22,9 @@ WORKDIR /dependencies
 COPY . .
 
 RUN chmod +x *.sh \
-    && ./install_dependencies.sh install_all \
-    && rm -rf /dependencies \
-    && rm -rf /var/lib/apt/lists/*
+    && ./install_dependencies.sh install_all
+    # && rm -rf /dependencies \
+    # && rm -rf /var/lib/apt/lists/*
 
 # Enable apt user dialogs again
 ARG DEBIAN_FRONTEND=dialog

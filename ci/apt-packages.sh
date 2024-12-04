@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apt_packages=(
+    # tof-ros2 deps
     apt-utils
     build-essential
     cmake
@@ -11,6 +12,7 @@ apt_packages=(
     libglfw3-dev
     libssl-dev
     wget
+    # Build custom .deb pacakge for ROS2
     python3-bloom
     python3-rosdep
     fakeroot
